@@ -18,7 +18,7 @@ spec:
         io.kompose.service: node
     spec:
       containers:
-      - image: docker.io/mithunhr/node_mongo:ppc64le
+      - image: docker.io/mithunhr/appnode:latest
         name: node
         ports:
         - containerPort: 3000

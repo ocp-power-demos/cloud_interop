@@ -18,7 +18,7 @@ spec:
         io.kompose.service: mong
     spec:
       containers:
-      - image: docker.io/mithunhr/mongo:ppc64le
+      - image: docker.io/mithunhr/dbmongo:latest
         name: mong
         ports:
         - containerPort: 27017
