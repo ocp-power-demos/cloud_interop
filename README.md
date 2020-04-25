@@ -7,14 +7,16 @@ underlying architecture(s) accordingly and pull respective docker image.
 It also demonstrates ease of moving from Public Cloud traditional x86_64 (like GCP,AWS) to 
 powerful IBM POWER Systems hosted in Hybrid/Private Clouds ( like Openshift Container Platform)
 
-### Steps to deploy the MongoDB + NodeJS Application on OpenShift Container Platform v3.11-
+### Steps to deploy the MongoDB + NodeJS Application on OpenShift Container Platform v3.11/v4.3 -
+
 ```
 oc create -f mong-service.yaml 
 oc create -f node-service.yaml
 oc create -f mong-deployment.yaml 
 oc create -f node-deployment.yaml 
 ```
-Upon Successfully creating respective Service/Deployment you will see the Output Similar to this -
+
+Upon Successfully applying respective Service/Deployment config you will see the Output as following -
 
 ```
 [root@p230n134 cloud_interop]# oc create -f mong-service.yaml 
@@ -38,6 +40,16 @@ node-b6f55bdb9-rpszs    1/1       Running   0          1m
 ```
 Where `-n mithun` is our targeted namespace
 
-#####Todo
-How to create a route and test how the endpoint exposed from NodeJS Container hits the Mongodb Container
-and indeed pulls in the data.
+### Creating Route and accessing application outside cluster
+
+Creating a route in OCP v3.11 -
+https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html#creating-routes 
+
+Creating a route in OCP v4.3 -
+There are many wasy to do it, one of them is as following
+https://docs.openshift.com/container-platform/4.3/networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-ingress-controller.html#configuring-ingress-cluster-traffic-ingress-controller
+
+
+### Maintainers/Contacts -
+Krishna Harsha Voora
+Mithun H R
