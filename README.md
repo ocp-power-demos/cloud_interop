@@ -50,6 +50,8 @@ There are many wasy to do it, one of them is as following
 https://docs.openshift.com/container-platform/4.3/networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-ingress-controller.html#configuring-ingress-cluster-traffic-ingress-controller
 
 
-### Maintainers/Contacts -
+### Maintainers/Contacts 
+
 Krishna Harsha Voora
+
 Mithun H R
