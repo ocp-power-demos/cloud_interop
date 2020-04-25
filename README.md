@@ -51,6 +51,8 @@ https://docs.openshift.com/container-platform/4.3/networking/configuring_ingress
 
 
 ### Maintainers/Contacts 
+For any clarifications/queries please reach out to one of the following contacts listed below,
+if found any deviations feel free to raise an issue 
 
 Krishna Harsha Voora
 
