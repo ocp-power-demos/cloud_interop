@@ -50,7 +50,7 @@ There are many wasy to do it, one of them is as following
 https://docs.openshift.com/container-platform/4.3/networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-ingress-controller.html#configuring-ingress-cluster-traffic-ingress-controller
 
 
-### Deploying Cloud Interop via OCP4.3 WebConsole
+### Deploying this Two Tier Application via OCP4.3 WebConsole
 
 Deploying this repository via OCP4.3 Webconsole - is pretty simple and efficient - to make your life easier we have 
 encapsulated our two tier application via yaml files - that can be consumed on any Kubernetes compatible platform in our case it will be OpenShift Container Platform.
