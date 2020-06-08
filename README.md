@@ -50,6 +50,62 @@ There are many wasy to do it, one of them is as following
 https://docs.openshift.com/container-platform/4.3/networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-ingress-controller.html#configuring-ingress-cluster-traffic-ingress-controller
 
 
+### Deploying Cloud Interop via OCP4.3 WebConsole
+
+Deploying this repository via OCP4.3 Webconsole - is pretty simple and efficient - to make your life easier we have 
+encapsulated our two tier application via yaml files - that can be consumed on any Kubernetes compatible platform in our case it will be OpenShift Container Platform.
+
+We will now look through series of steps that can be followed to deploy this application via OCP4.3's WebConsole, 
+the steps listed presume you have working OCP4.3 Setup and is accessible via WebConsole.
+
+1) Git clone this repository to your local laptop -
+
+```
+cd $HOME/Desktop/
+git clone https://github.com/krishvoor/cloud_interop
+cd cloud_interop
+```
+
+2) Navigate to your OCP4.3 WebConsole and Switch to Developer Mode -
+![Image of Switching_Admin_Dev](https://github.com/krishvoor/cloud_interop/blob/master/pics/Switching_Admin_Dev.png)
+
+3) Click on Add --> Select highlighted YAML icon
+![Image of Selecting YAML](https://github.com/krishvoor/cloud_interop/blob/master/pics/Click_add_yaml_view.png)
+
+4) From your Cloned Directory drop mong-service.yaml file into the WebConsole  -
+![Image of Mongo_Service](https://github.com/krishvoor/cloud_interop/blob/master/pics/mongo-service.png)
+Once loaded click "Create"
+
+5) Repeat Steps outlined in Step3), drop node-service.yaml file into the WebConsole
+![Image of Node_Service](https://github.com/krishvoor/cloud_interop/blob/master/pics/node-service-yaml.png)
+Once loaded click "Create"
+
+6) Repeat Steps outlined in Step3), drop mong-deployment.yaml file into the WebConsole
+![Image of Mongo_Deployment](https://github.com/krishvoor/cloud_interop/blob/master/pics/mongo-deployment-yaml.png)
+Once loaded click "Create"
+
+7) Repeat Steps outlined in Step3), drop node-deployment.yaml file into the WebConsole
+![Image of Node_Deployment](https://github.com/krishvoor/cloud_interop/blob/master/pics/node-deployment.png)
+Once loaded click "Create"
+
+8) Switch to Topology Section to have an overlook of your application 
+![Image of Topology](https://github.com/krishvoor/cloud_interop/blob/master/pics/topology_view.png)
+
+9) Switch to Administrator View -- 
+![Image of Switching_Dev_Admin](https://github.com/krishvoor/cloud_interop/blob/master/pics/Switching_Admin_Dev.png)
+
+10) Creating route -- From Administrator View --> Select Networking --> Routes --> Fill in the fields as neccessary and Click Create 
+![Image of Creating_Route](https://github.com/krishvoor/cloud_interop/blob/master/pics/Create_route_details.png)
+
+11) When accessed the newly created link - you will initial success page as here -
+
+![Image of Initial Success](https://github.com/krishvoor/cloud_interop/blob/master/pics/Initial_Success.png)
+
+12) Add this URI at the end of your route `/api/getInspectionsByZipCodeIteration/10100/10150/1`
+Which queries and returns Inspections carried between PinCode 10100 and 10150
+
+For more information please access this https://developer.ibm.com/tutorials/mongodb-nodejs-on-openshift/
+
 ### Maintainers/Contacts 
 For any clarifications/queries please reach out to one of the following contacts listed below,
 if found any deviations feel free to raise an issue 
