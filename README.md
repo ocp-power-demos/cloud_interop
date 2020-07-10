@@ -47,8 +47,7 @@ https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html#creatin
 
 Creating a route in OCP v4.3 -
 There are many wasy to do it, one of them is as following
-https://docs.openshift.com/container-platform/4.3/networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-ingress-controller.html#configuring-ingress-cluster-traffic-ingress-controller
-
+https://docs.openshift.com/container-platform/4.3/networking/configuring_ingress_cluster_traffic/configuring-ingress-cluster-traffic-nodeport.html#configuring-ingress-cluster-traffic-nodeport
 
 ### Deploying this Two Tier Application via OCP4.3 WebConsole
 
