@@ -1,27 +1,25 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: kompose convert
-    kompose.version: 1.16.0 (0c01309)
-  creationTimestamp: null
-  labels:
-    io.kompose.service: mong
-  name: mong
-spec:
-  replicas: 1
-  strategy: {}
-  template:
-    metadata:
-      creationTimestamp: null
-      labels:
-        io.kompose.service: mong
-    spec:
-      containers:
-      - image: docker.io/mithunhr/dbmongo:latest
+    labels:
         name: mong
-        ports:
-        - containerPort: 27017
-        resources: {}
-      restartPolicy: Always
-status: {}
+    name: mong
+    namespace: harsha
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: mong
+    template:
+        metadata:
+            labels:
+                app: mong
+        spec:
+            containers:
+                -
+                    name: mong
+                    image: docker.io/mithunhr/dbmongo:latest
+                    imagePullPolicy: IfNotPresent
+                    ports:
+                    - containerPort: 27017
+                    restartPolicy: Always
