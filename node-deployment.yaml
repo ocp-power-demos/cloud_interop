@@ -1,27 +1,25 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: kompose convert
-    kompose.version: 1.16.0 (0c01309)
-  creationTimestamp: null
-  labels:
-    io.kompose.service: node
-  name: node
-spec:
-  replicas: 1
-  strategy: {}
-  template:
-    metadata:
-      creationTimestamp: null
-      labels:
-        io.kompose.service: node
-    spec:
-      containers:
-      - image: docker.io/mithunhr/appnode:latest
+    labels:
         name: node
-        ports:
-        - containerPort: 3000
-        resources: {}
-      restartPolicy: Always
-status: {}
+    name: node
+    namespace: harsha
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: node
+    template:
+        metadata:
+            labels:
+                app: node
+        spec:
+            containers:
+                -
+                    name: node
+                    image: docker.io/mithunhr/appnode:latest
+                    imagePullPolicy: IfNotPresent
+                    ports:
+                    - containerPort: 3000
+                    restartPolicy: Always
