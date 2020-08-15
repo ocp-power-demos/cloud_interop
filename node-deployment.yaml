@@ -10,10 +10,12 @@ spec:
     selector:
         matchLabels:
             app: node
+            service: node
     template:
         metadata:
             labels:
                 app: node
+                service: node
         spec:
             containers:
                 -

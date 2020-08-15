@@ -10,10 +10,12 @@ spec:
     selector:
         matchLabels:
             app: mong
+            service: mong
     template:
         metadata:
             labels:
                 app: mong
+                service: mong
         spec:
             containers:
                 -
