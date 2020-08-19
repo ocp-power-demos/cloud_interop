@@ -145,6 +145,16 @@ Which queries and returns Inspections carried between PinCode 10100 and 10150
 
 For more information please access this https://developer.ibm.com/tutorials/mongodb-nodejs-on-openshift/
 
+### Clean-Up/Delete your Application
+To delete your application, follow below steps -
+
+```
+oc delete -f node-deployment.yaml
+oc delete -f mong-deployment.yaml
+oc delete -f node-service.yaml
+oc delete -f mong-service.yaml 
+```
+
 ### Maintainers/Contacts 
 For any clarifications/queries please reach out to one of the following contacts listed below,
 if found any deviations feel free to raise an issue 
