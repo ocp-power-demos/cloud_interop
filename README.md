@@ -78,7 +78,7 @@ Please add this API at end of your route `/api/getInspectionsByZipCodeIteration/
 which would fetch Inspections carried between areas with pincodes `10100` and `101500` via NodeJS APIs
 and from MongoDB.
 
-For more information - please visit this website(https://google.com)
+For more information - please visit this website(https://docs.mongodb.com/manual/tutorial/geospatial-tutorial/)
 
 ### Creating Route and accessing application outside cluster
 
