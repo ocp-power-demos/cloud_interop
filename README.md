@@ -16,14 +16,15 @@ Git clone this repository to your server -
 
 ```
 cd $HOME/
-git clone https://github.com/krishvoor/cloud_interop
+git clone https://github.com/ocp-power-demos/cloud_interop
 cd cloud_interop
 ```
 
 Create a new project 
 
 ```
-oc project mithun
+oc new-project ibm -description="IBM ISDL" --display-name="ibm"
+oc project ibm
 ```
 
 Deploy Service and Deployment config files via
@@ -51,16 +52,15 @@ deployment.extensions/node created
 
 To check the status of pods in your desired namespace issue the following
 ```
-[root@p230n134 cloud_interop]# oc get po -n mithun
+[root@p230n134 cloud_interop]# oc get po -n ibm
 NAME                    READY     STATUS    RESTARTS   AGE
 mong-6f6cbff4fb-q4ds6   1/1       Running   0          1m
 node-b6f55bdb9-rpszs    1/1       Running   0          1m
 [root@p230n134 cloud_interop]#
 ```
-Where `-n mithun` is our targeted namespace
+Where `-n ibm` is our targeted namespace
 
-To create a secure access to your application, you need create a route and
-expose the service.
+Create a secure route to access your application.
 
 ```
 [root@p230n134 cloud_interop]# oc get svc
@@ -73,8 +73,8 @@ route.route.openshift.io/node created
 [root@p230n134 cloud_interop]#
 ```
 
-So far you have deployed the solution and created a secure route to be accessible outside OCP cluster.
-Please add this API at end of your route `/api/getInspectionsByZipCodeIteration/10100/10150/1` 
+So far, you have deployed the solution and created a secure route to access your application outside OCP cluster.
+Please add this path towards end of your URL/route `/api/getInspectionsByZipCodeIteration/10100/10150/1` ,
 which would fetch Inspections carried between areas with pincodes `10100` and `101500` via NodeJS APIs
 and from MongoDB.
 
@@ -101,44 +101,44 @@ the steps listed presume you have working OCP4.3 Setup and is accessible via Web
 
 ```
 cd $HOME/Desktop/
-git clone https://github.com/krishvoor/cloud_interop
+git clone https://github.com/ocp-power-demos/cloud_interop
 cd cloud_interop
 ```
 
 2) Navigate to your OCP4.3 WebConsole and Switch to Developer Mode -
-![Image of Switching_Admin_Dev](https://github.com/krishvoor/cloud_interop/blob/master/pics/Switching_Admin_Dev.png)
+![Image of Switching_Admin_Dev](https://github.com/ocp-power-demos/cloud_interop/blob/master/pics/Switching_Admin_Dev.png)
 
 3) Click on Add --> Select highlighted YAML icon
-![Image of Selecting YAML](https://github.com/krishvoor/cloud_interop/blob/master/pics/Click_add_yaml_view.png)
+![Image of Selecting YAML](https://github.com/ocp-power-demos/cloud_interop/blob/master/pics/Click_add_yaml_view.png)
 
 4) From your Cloned Directory drop mong-service.yaml file into the WebConsole  -
-![Image of Mongo_Service](https://github.com/krishvoor/cloud_interop/blob/master/pics/mongo-service.png)
+![Image of Mongo_Service](https://github.com/ocp-power-demos/cloud_interop/blob/master/pics/mongo-service.png)
 Once loaded click "Create"
 
 5) Repeat Steps outlined in Step3), drop node-service.yaml file into the WebConsole
-![Image of Node_Service](https://github.com/krishvoor/cloud_interop/blob/master/pics/node-service-yaml.png)
+![Image of Node_Service](https://github.com/ocp-power-demos/cloud_interop/blob/master/pics/node-service-yaml.png)
 Once loaded click "Create"
 
 6) Repeat Steps outlined in Step3), drop mong-deployment.yaml file into the WebConsole
-![Image of Mongo_Deployment](https://github.com/krishvoor/cloud_interop/blob/master/pics/mongo-deployment-yaml.png)
+![Image of Mongo_Deployment](https://github.com/ocp-power-demos/cloud_interop/blob/master/pics/mongo-deployment-yaml.png)
 Once loaded click "Create"
 
 7) Repeat Steps outlined in Step3), drop node-deployment.yaml file into the WebConsole
-![Image of Node_Deployment](https://github.com/krishvoor/cloud_interop/blob/master/pics/node-deployment.png)
+![Image of Node_Deployment](https://github.com/ocp-power-demos/cloud_interop/blob/master/pics/node-deployment.png)
 Once loaded click "Create"
 
 8) Switch to Topology Section to have an overlook of your application 
-![Image of Topology](https://github.com/krishvoor/cloud_interop/blob/master/pics/topology_view.png)
+![Image of Topology](https://github.com/ocp-power-demos/cloud_interop/blob/master/pics/topology_view.png)
 
 9) Switch to Administrator View -- 
-![Image of Switching_Dev_Admin](https://github.com/krishvoor/cloud_interop/blob/master/pics/Switching_Admin_Dev.png)
+![Image of Switching_Dev_Admin](https://github.com/ocp-power-demos/cloud_interop/blob/master/pics/Switching_Admin_Dev.png)
 
 10) Creating route -- From Administrator View --> Select Networking --> Routes --> Fill in the fields as neccessary and Click Create 
-![Image of Creating_Route](https://github.com/krishvoor/cloud_interop/blob/master/pics/Create_route_details.png)
+![Image of Creating_Route](https://github.com/ocp-power-demos/cloud_interop/blob/master/pics/Create_route_details.png)
 
 11) When accessed the newly created link - you will initial success page as here -
 
-![Image of Initial Success](https://github.com/krishvoor/cloud_interop/blob/master/pics/Initial_Success.png)
+![Image of Initial Success](https://github.com/ocp-power-demos/cloud_interop/blob/master/pics/Initial_Success.png)
 
 12) Add this API at the end of your route `/api/getInspectionsByZipCodeIteration/10100/10150/1`
 Which queries and returns Inspections carried between PinCode 10100 and 10150
