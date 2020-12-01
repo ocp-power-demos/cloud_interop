@@ -4,7 +4,6 @@ metadata:
     labels:
         name: mong
     name: mong
-    namespace: harsha
 spec:
     replicas: 1
     selector:

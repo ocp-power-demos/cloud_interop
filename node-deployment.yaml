@@ -4,7 +4,6 @@ metadata:
     labels:
         name: node
     name: node
-    namespace: harsha
 spec:
     replicas: 1
     selector:
