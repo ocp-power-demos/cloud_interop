@@ -23,7 +23,7 @@ cd cloud_interop
 Create a new project 
 
 ```
-oc new-project ibm -description="IBM ISDL" --display-name="ibm"
+oc new-project ibm --description="IBM ISDL" --display-name="ibm"
 oc project ibm
 ```
 
@@ -71,6 +71,26 @@ node   ClusterIP   172.30.126.228   <none>        3000/TCP    1m
 [root@p230n134 cloud_interop]# oc create route edge --service=node
 route.route.openshift.io/node created
 [root@p230n134 cloud_interop]#
+```
+To get route data
+```
+# oc describe route/node
+
+Name:                   node
+Namespace:              ibm
+Created:                About a minute ago
+Labels:                 service=node
+Annotations:            openshift.io/host.generated=true
+Requested Host:         node-ibm.2886795277-80-lando01.environments.katacoda.com
+                           exposed on router default (host apps-crc.testing) about a minute ago
+Path:                   <none>
+TLS Termination:        edge
+Insecure Policy:        <none>
+Endpoint Port:          3000
+
+Service:        node
+Weight:         100 (100%)
+Endpoints:      10.217.0.87:3000
 ```
 
 So far, you have deployed the solution and created a secure route to access your application outside OCP cluster.
