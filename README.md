@@ -23,7 +23,7 @@ cd cloud_interop
 Create a new project 
 
 ```
-oc new-project ibm -description="IBM ISDL" --display-name="ibm"
+oc new-project ibm --description="IBM ISDL" --display-name="ibm"
 oc project ibm
 ```
 
